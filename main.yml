@@ -2,7 +2,7 @@
   roles:
     - bash
     - z
-    # - fzf
+    - fzf
     # - iterm2
     # - sublime-text
     # - bettertouchtool

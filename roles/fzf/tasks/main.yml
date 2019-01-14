@@ -1,0 +1,8 @@
+---
+- name: install
+  homebrew: name="fzf"
+
+- name: add bash configuration
+  copy:
+    src: fzf
+    dest: "{{ ansible_env.HOME }}/.bashrc.d"
