@@ -1,0 +1,29 @@
+- hosts: all
+  roles:
+    - bash
+    # - z
+    # - fzf
+    # - iterm2
+    # - sublime-text
+    # - bettertouchtool
+    # - alfred
+    # # - hyper
+    # - tmux
+    # - vim
+    # - karabiner-elements
+    # - git
+    # - jq
+    # - coreutils
+    # - virtualbox
+    # - vagrant
+
+# todo: learn about packer and making my own vagrant boxes
+# todo: add these roles:
+# hub
+# ruby
+# node
+# nvm
+# yarn
+# postgres
+# awscli
+# digital ocean
