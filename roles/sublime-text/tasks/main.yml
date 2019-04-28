@@ -1,0 +1,24 @@
+---
+- name: install sublime-text
+  homebrew_cask:
+    name: sublime-text
+
+- name: Copy each file over that matches the given pattern
+  copy:
+    src: '{{ item }}'
+    dest: ~/Library/Application Support/Sublime Text 3/Packages/User/
+    owner: max
+    group: staff
+    mode: 0644
+  with_fileglob: '*.sublime-settings'
+
+- name: copy sublime-text license
+  tags:
+    - licenses
+    - never
+  copy:
+    content: '{{ lookup("lastpass", "Licenses/License.sublime_license", field="notes") }}'
+    dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
+    owner: max
+    group: staff
+    mode: 0644
