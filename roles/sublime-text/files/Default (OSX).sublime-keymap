@@ -1,0 +1,52 @@
+[
+	{
+		"keys": ["super+."],
+		"command": "edit_settings",
+		"args": {
+			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
+			"default": "[\n\t$0\n]\n"
+		}
+	},
+
+	{
+		"keys": ["option+f"],
+		"command": "move",
+		"args": {
+			"by": "words",
+			"forward": true
+		}
+	},
+
+	{
+		"keys": ["option+b"],
+		"command": "move",
+		"args": {
+			"by": "words",
+			"forward": false
+		}
+	},
+
+	{
+		"keys": ["ctrl+w"],
+		"command": "delete_word",
+		"args": {
+			"forward": false
+		}
+	},
+
+	{
+		"keys": ["option+d"],
+		"command": "delete_word",
+		"args": {
+			"forward": true
+		}
+	},
+
+	{
+		"keys": ["ctrl+u"],
+		"command": "run_macro_file",
+		"args": {
+			"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"
+		}
+	}
+]

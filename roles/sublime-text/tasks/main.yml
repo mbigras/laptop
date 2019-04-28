@@ -10,7 +10,9 @@
     owner: max
     group: staff
     mode: 0644
-  with_fileglob: '*.sublime-settings'
+  with_fileglob:
+    - '*.sublime-settings'
+    - '*.sublime-keymap'
 
 - name: copy sublime-text license
   tags:
