@@ -1,0 +1,24 @@
+#!/bin/bash
+
+chunkc core::log_file stdout
+chunkc core::log_level warn
+chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
+
+chunkc core::hotload 0
+
+chunkc set window_float_topmost  0
+chunkc set ffm_bypass_modifier fn
+chunkc set ffm_standby_on_float 0
+chunkc set ffm_disable_autoraise 1
+
+chunkc core::load ffm.so
+
+chunkc set global_desktop_mode           float
+chunkc set global_desktop_offset_top     20
+chunkc set global_desktop_offset_bottom  20
+chunkc set global_desktop_offset_left    20
+chunkc set global_desktop_offset_right   20
+chunkc set global_desktop_offset_gap     20
+chunkc set mouse_follows_focus           off
+
+chunkc core::load tiling.so

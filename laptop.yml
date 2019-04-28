@@ -1,7 +1,11 @@
 ---
 - hosts: all
   roles:
-    - sublime-text
+    # - sublime-text
+    # - chunkwm
+    # - skhd
+    # - spectacle
+    - alfred
   # tasks:
   #   - name: install lastpass-cli
   #     homebrew:
@@ -18,15 +22,3 @@
   #   - name: install dropbox
   #     homebrew_cask:
   #       name: dropbox
-
-  #   - name: install alfred
-  #     homebrew_cask:
-  #       name: alfred
-
-  #   - name: copy alfred license
-  #     copy:
-  #       content: '{{ lookup("lastpass", "Licenses/alfred-license.plist", field="notes") }}'
-  #       dest: ~/Library/Application Support/Alfred 3/license.plist
-  #       owner: max
-  #       group: staff
-  #       mode: 0644

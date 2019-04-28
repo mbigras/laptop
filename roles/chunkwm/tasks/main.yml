@@ -1,0 +1,16 @@
+---
+- name: add repository
+  homebrew_tap:
+    name: koekeishiya/formulae
+
+- name: install
+  homebrew:
+    name: chunkwm
+
+- name: copy configuration
+  copy:
+    src: chunkwmrc
+    dest: ~/.chunkwmrc
+    owner: max
+    group: staff
+    mode: 0755

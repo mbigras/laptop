@@ -1,0 +1,12 @@
+---
+- name: install package
+  homebrew_cask:
+    name: alfred
+
+- name: synchronize configuration
+  synchronize:
+    src: '{{ item }}/'
+    dest: ~/Library/Application Support/Alfred 3/Alfred.alfredpreferences/{{ item }}/
+  loop:
+    - preferences
+    - workflows

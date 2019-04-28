@@ -1,0 +1,54 @@
+# chunkc tiling::window --grid-layout rows:cols:left:top:width:height
+# 2560/20=128
+# 1600/20=80
+# note: ~/.chunkwmrc offset=20
+
+# full
+alt+cmd-f :		id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:0:0:128:80; \
+			chunkc tiling::window --focus $id
+
+# left
+alt+cmd-left :		id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:0:0:63:80; \
+			chunkc tiling::window --focus $id
+
+# right
+alt+cmd-right :		id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:65:0:63:80; \
+			chunkc tiling::window --focus $id
+
+# top left
+ctrl+cmd-left :		id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:0:0:63:39; \
+			chunkc tiling::window --focus $id
+
+# top right
+ctrl+cmd-right :	id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:65:0:63:39 
+
+# bottom left
+ctrl+cmd+shift-left :	id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:0:41:63:39; \
+			chunkc tiling::window --focus $id
+
+# bottom right
+ctrl+cmd+shift-right :	id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:65:41:63:39; \
+			chunkc tiling::window --focus $id
+
+# top
+alt+cmd-up :		id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:0:0:128:39; \
+			chunkc tiling::window --focus $id
+
+# bottom
+alt+cmd-down :		id=$(chunkc tiling::query --window id); \
+			chunkc tiling::window --grid-layout 80:128:0:41:128:39; \
+			chunkc tiling::window --focus $id
+
+# ctrl+shift-l :	chunkc core::unload ffm.so
+# ctrl+shift+cmd-l :	chunkc core::load ffm.so
+
+ctrl+alt+cmd-left :	chunkc tiling::window --send-to-desktop 1
+ctrl+alt+cmd-right :	chunkc tiling::window --send-to-desktop 2

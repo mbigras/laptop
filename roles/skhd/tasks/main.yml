@@ -1,0 +1,12 @@
+---
+- name: install package
+  homebrew:
+    name: koekeishiya/formulae/skhd
+
+- name: copy configuration
+  copy:
+    src: skhdrc
+    dest: ~/.skhdrc
+    owner: max
+    group: staff
+    mode: 0644
