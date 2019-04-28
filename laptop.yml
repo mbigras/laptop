@@ -1,0 +1,42 @@
+---
+- hosts: all
+  tasks:
+    - name: install lastpass-cli
+      homebrew:
+        name: lastpass-cli
+
+    - name: install iterm2
+      homebrew_cask:
+        name: iterm2
+
+    - name: install sublime-text
+      homebrew_cask:
+        name: sublime-text
+
+    - name: copy sublime-text license
+      copy:
+        content: '{{ lookup("lastpass", "Licenses/License.sublime_license", field="notes") }}'
+        dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
+        owner: max
+        group: staff
+        mode: 0644
+
+    - name: install google-backup-and-sync
+      homebrew_cask:
+        name: google-backup-and-sync
+
+    - name: install dropbox
+      homebrew_cask:
+        name: dropbox
+
+    - name: install alfred
+      homebrew_cask:
+        name: alfred
+
+    - name: copy alfred license
+      copy:
+        content: '{{ lookup("lastpass", "Licenses/alfred-license.plist", field="notes") }}'
+        dest: ~/Library/Application Support/Alfred 3/license.plist
+        owner: max
+        group: staff
+        mode: 0644
