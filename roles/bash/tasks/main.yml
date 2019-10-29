@@ -1,37 +1,36 @@
 ---
-- name: add macos specific source file
+- name: add bash_profile
   copy:
-    src: .bash_profile
-    dest: "{{ ansible_env.HOME }}"
+    src: bash_profile
+    dest: /Users/max/.bash_profile
+    owner: max
+    group: staff
+    mode: 0644
 
-- name: add source file
+- name: add bashrc
   copy:
-    src: .bashrc
-    dest: "{{ ansible_env.HOME }}"
+    src: bashrc
+    dest: /Users/max/.bashrc
+    owner: max
+    group: staff
+    mode: 0644
 
-- name: add source files directory
+- name: make .bashrc.d directory
   file:
-    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    path: /Users/max/.bashrc.d
     state: directory
+    owner: max
+    group: staff
+    mode: 0755
 
-- name: configure shell prompt
+- name: copy bash source files
   copy:
-    src: prompt
-    dest: "{{ ansible_env.HOME }}/.bashrc.d"
-
-- name: configure path
-  copy:
-    src: path
-    dest: "{{ ansible_env.HOME }}/.bashrc.d"
-
-# https://www.reddit.com/r/apple/comments/5t20tk/lpt_add_a_hushlogin_file_to_your_home_directory/
-- name: add hushlogin
-  copy:
-    src: .hushlogin
-    dest: "{{ ansible_env.HOME }}"
-
-# https://superuser.com/questions/1124696/when-starting-tmux-it-says-restored-session-despite-removed-resurrect
-- name: add .bash_sessions_disable to stop getting Restored session message when making new panes
-  copy:
-    src: .bash_sessions_disable
-    dest: "{{ ansible_env.HOME }}"
+    src: '{{ item }}'
+    dest: /Users/max/.bashrc.d/{{ item }}
+    owner: max
+    group: staff
+    mode: 0644
+  loop:
+    - prompt
+    - path
+    - editor
