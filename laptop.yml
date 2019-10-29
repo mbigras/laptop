@@ -1,24 +1,5 @@
 ---
 - hosts: all
   roles:
-    # - sublime-text
-    # - chunkwm
-    # - skhd
-    # - spectacle
-    - alfred
-  # tasks:
-  #   - name: install lastpass-cli
-  #     homebrew:
-  #       name: lastpass-cli
-
-  #   - name: install iterm2
-  #     homebrew_cask:
-  #       name: iterm2
-
-  #   - name: install google-backup-and-sync
-  #     homebrew_cask:
-  #       name: google-backup-and-sync
-
-  #   - name: install dropbox
-  #     homebrew_cask:
-  #       name: dropbox
+    - yabai
+    - skhd

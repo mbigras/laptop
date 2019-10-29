@@ -1,4 +1,10 @@
 # Workstation Playbook
 
-> Configures my laptop running macOS with Ansible
+> Configures my macOS laptop using Ansible
 
+## Usage
+
+```
+ansible localhost -m ping
+ansible-playbook laptop.yml
+```

@@ -1,0 +1,12 @@
+---
+- name: install yabai
+  homebrew:
+    name: koekeishiya/formulae/yabai
+
+- name: copy yabairc
+  copy:
+    src: yabairc
+    dest: ~/.yabairc
+    owner: max
+    group: staff
+    mode: 0755

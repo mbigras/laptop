@@ -1,9 +1,9 @@
 ---
-- name: install package
+- name: install skhd
   homebrew:
     name: koekeishiya/formulae/skhd
 
-- name: copy configuration
+- name: copy skhdrc
   copy:
     src: skhdrc
     dest: ~/.skhdrc
