@@ -1,0 +1,12 @@
+---
+- name: install iterm2
+  homebrew_cask:
+    name: iterm2
+
+- name: copy com.googlecode.iterm2.plist
+  copy:
+    src: com.googlecode.iterm2.plist
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+    owner: max
+    group: staff
+    mode: 0644
