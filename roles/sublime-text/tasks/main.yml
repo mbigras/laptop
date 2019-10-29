@@ -3,24 +3,19 @@
   homebrew_cask:
     name: sublime-text
 
-- name: Copy each file over that matches the given pattern
+- name: copy configuration files
   copy:
     src: '{{ item }}'
-    dest: ~/Library/Application Support/Sublime Text 3/Packages/User/
+    dest: ~/Library/Application Support/Sublime Text 3/Packages/User/{{ item }}
     owner: max
     group: staff
     mode: 0644
-  with_fileglob:
-    - '*.sublime-settings'
-    - '*.sublime-keymap'
-
-- name: copy sublime-text license
-  tags:
-    - licenses
-    - never
-  copy:
-    content: '{{ lookup("lastpass", "Licenses/License.sublime_license", field="notes") }}'
-    dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
-    owner: max
-    group: staff
-    mode: 0644
+  loop:
+    - Custom.sublime-commands
+    - Default (OSX).sublime-keymap
+    - Package Control.sublime-settings
+    - Plain text.sublime-settings
+    - Preferences.sublime-settings
+    - Python.sublime-settings
+    - Ruby.sublime-settings
+    - YAML.sublime-settings

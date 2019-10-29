@@ -1,5 +1,8 @@
 {
+	"caret_style": "solid",
+	"color_scheme": "Monokai.sublime-color-scheme",
 	"font_size": 12,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"ActionScript",
@@ -20,7 +23,6 @@
 		"Lisp",
 		"Lua",
 		"Makefile",
-		"Markdown",
 		"Matlab",
 		"Objective-C",
 		"OCaml",
@@ -44,6 +46,5 @@
 	"scroll_past_end": true,
 	"show_errors_inline": false,
 	"show_git_status": false,
-	"theme": "Default.sublime-theme",
-    "caret_style": "solid"
+	"theme": "Default.sublime-theme"
 }
