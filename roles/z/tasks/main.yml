@@ -1,8 +1,0 @@
----
-- name: install
-  homebrew: name="z"
-
-- name: add bash configuration
-  copy:
-    src: z
-    dest: "{{ ansible_env.HOME }}/.bashrc.d"
