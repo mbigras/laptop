@@ -1,4 +1,4 @@
-ctrl - left          : yabai -m space --focus prev
-ctrl - right         : yabai -m space --focus next
-ctrl + shift - left  : yabai -m window --space prev; yabai -m space --focus prev
-ctrl + shift - right : yabai -m window --space next; yabai -m space --focus next
+ctrl - left          : yabai -m space --focus prev || yabai -m space --focus next
+ctrl - right         : yabai -m space --focus prev || yabai -m space --focus next
+ctrl + shift - left  : (yabai -m window --space prev && yabai -m space --focus prev) || (yabai -m window --space next && yabai -m space --focus next)
+ctrl + shift - right : (yabai -m window --space prev && yabai -m space --focus prev) || (yabai -m window --space next && yabai -m space --focus next)
